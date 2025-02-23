@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Vintage Letter</title>
+    <style>
+        body {
+            background: linear-gradient(45deg, #f7e1c1, #e8c7a3, #d6b98c, #c7a480, #b39174);
+            font-family: 'Cursive', serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .book {
+            width: 60vw;
+            height: 80vh;
+            background: linear-gradient(135deg, #f3e5ab, #f7e1c1, #edd9a3, #e3caa8, #d6b98c);
+            border-radius: 10px;
+            box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding: 20px;
+        }
+        .page {
+            width: 90%;
+            height: 90%;
+            padding: 20px;
+            font-size: 1.5em;
+            color: #4b3b30;
+            background: rgba(255, 248, 220, 0.8);
+            border-radius: 8px;
+            overflow: hidden;
+            position: absolute;
+            transition: transform 0.8s, opacity 0.8s;
+        }
+        .hidden {
+            transform: rotateY(180deg);
+            opacity: 0;
+        }
+        .btn {
+            position: absolute;
+            bottom: 20px;
+            padding: 10px 20px;
+            background: #a67c52;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            border-radius: 5px;
+        }
+        #prev { left: 20px; }
+        #next { right: 20px; }
+    </style>
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="your-background-music.mp3" type="audio/mpeg">
+    </audio>
+    <div class="book">
+        <div class="page" id="page1">
+            Dear Sohel,<br><br>
+            Sabse pehle, Happy Birthday!<br>
+            Ek aur saal guzar gaya, aur pata hai? Aaj bhi jab ye din aata hai, toh mujhe woh saari yaadein yaad aati hain jo humne saath bitayi thi. Woh bina wajah ki hansi, woh late-night talks, woh random fights jo hamesha kisi na kisi joke pe khatam ho jati thi... sab kuch ek pal mein wapas yaad aa jata hai. "Dosti ka asli matlab shayad wahi hota hai—jo door hoke bhi dil ke kareeb rahe."Accha let me tell you something...Shuruwaat itni khoobsurat thi, ki ant ka ehsaas hi nahi hua...phir bhi ek baar phirse mehsoos karenge !!Yaar mein tujhe tab se jaanthi hu,shayad mein khud ko bhi itna nahi jaanthi thi!!I mean 1st class tha na!!when we were in school,itne baatein bhi nhi the,lyk I just know youuu.Apart from academics hum itne dost bhi nahi the.Par kismat ka tho kuch aur hein khel tha,shaayad isliye hein hume  phirse mile honge.I still remember the first msg of youuu,..jaha dhed saarein baatein hue,That 3:30 am call for the first tym ,and even that meet after a long tym jaha,sirf 30 sec ka eye contact hein mila tha..Yeah beggining was so good,tujhe pata hai ki..tera insta acc bhi mere paas hein tha,ab teri id tak ka bhi pata nhi!!Ante inka sweet or good memories anthe..Nvu naatho chaala takkuva kaalame baagunnav,I mean may be that frndship....        </div>
+        <div class="page hidden" id="page2">
+            Pehle you left me for sushmitha.lyk tune kaha tha ki..uske kehne se tune mujhse baat karna nai chaahta...aur phir itni baat nhi thi..phirse tu aaya..phir chal gaya..may be phirse lekin jaana tho tu kabhi nhi bhoola.Aur kahun tho meine sachem tujhse pyyar karke galti ki thi,shayad nhi karna tha..atleast tujhe batana tho nhi karni thi..It would have been better,If it happened silently.I mean calm ga vellipoyi unte baagundu..cheppakundane..Tune mera dil aisa thoda hai ki,phirse judna hein mushkil ho gaya!!!Ha pyaar tha,lekin dosti ussey badhkar hein thi,kabhi maine tujhe waisa cheat nhi kiya,jaisa tune socha aur kaha.Bus aise hein tha oo..lekin tune itna ignore karta hai ki..ab is pal mujhe tujhse kuch ummed hein nhi hai,aur rakhna bhi nhi chaahti...Yaar tune mera bday pe bhi wish nai kiya.And Do you think ki,oo mujhe hurt nai karega.mujhe humesha se ek hi sawaal tha,Won't he think ki yaar ussey kitna bura laga hoga!!??maine tujhe itne baar call kiya humesha oo busy wala ringtone and single tick.bus ismein hein zindagi chal jaati hai...Aisa bhi nhi hai ki..hamari kahani end  hui thi...bas mujhe itna batana tha ki,..I really felt very bad about you,that emptiness,loneliness,ignorance..yeh sabne pyaar ko kya,dosti ko khatam karne lage hai.......neek gurtund okasari cheppav,Don't curse any bad about me..ani..inka daani tarvata ayite...naake vaadhule inka anipinchindi...ipd neekosam emaina cheyyali anna naakem cheyyali anipinchatledhu..lyk endukle oorike malli..em chesina nvu tappugane teeskuntavemo...em anukuntavo..ayina appatla em lemga.It just ended anthe.....
+        </div>
+        <div class="page hidden" id="page3">Monna group call lo vacchi ela madhyalo vellipoyav thelsa..em anukuntaro ani kuda ledhu..Ha nijame,she loves you more than what u love for her...kaani nen vaddhu anukunapd vellipo kadha inka..naa valla nduk ibbandi paddam.inkokati ,ha mere liye pyaar dosti hai,agar oo mere sabse accha dost nhi ban paya tho main ussey kabhi pyaar hi nhi karungi!! and kahapein likein nhi hai ki oo dost tu hi hoga,may be this is not the tym anthe...nvu kaakapothe inkokaru anthega..dantlo em undhi cheppu...ninnu marchipodam easy kaadho teliyadhu kaani ila ayite undalenu..ila preminchadam ayite chaala kastam...nak nvante istam anthe ha istam..naak naa frnds andaru istame..kaani nvu konchem ekkuva anthe...kaani ipd adi kuda em ledhuga..antha nashanam chesav..Tune kabhi mera saath nhi tha tab mujhe ek dost ki zarrorat thi...tune sab kuch bhigad diya...and maine tujhe kaha tha ki kisiko mat bol..tune sab usko batake mere mazaak utarne laaga..tanatho call chepinchav chudu aa roju n8..inka apde ,I can't hold u even as a frnd!!!patanai galti kiski thi..lekin mujhe nhi chaahiye aisi dosti yaa pyaar,I am just ending it,mujhe ab kuch likhne ka bhi mann nhi kar rha hai.You always make me feel like I am unworthy,shayad mein tere liye itni bhi imp nhi hu jitna mein sochti hu..tune group banayi aur mujhe add tak bhi nhi kiya!!
+        </div>
+        <div class="page hidden" id="page4">
+            Anyways Happy Birthday,may be idey naa last wish emo..gift plan cheddam anukunna kaani..neek nene vaddhu annav..inka nen em icchina return pettavani guarantee em ledhuga..neek nen anthene chiraak,nen em cheppina..sodhi cheppaku antav..manam vaddhu ane vallatho,..manam kuda dhooranga untene better le iddariki...Be Happy with the love of your life..adiga ani cheppu..Naak telsinanta varaku nvu intha kuda chadavavu..incase If you read,please I do request don't share all this info with anyone atleast tu mujhe respect karta hai tho,kyunki  tu itna caring nhi,dosti tho humesha ek naatak jaise thi aur pyaar tho door ki baat hai !!Jo rishta tere saath tha, wo ek waqt pe meri pehchaan thi. Ab sirf ek yaad hai. Ek yaad, jo dukh se zyada kuch nahi deti.Toh ab jo bhi tha, jo bhi hai, aur jo bhi hoga… uska koi matlab nahi. Yeh mera aakhri message hai tere liye. Ab mujhe tujhse na dosti chahiye, na pyaar. Bas ek alvida, jo shayad tu kabhi padhe ya na padhe.
+
+            "Mohabbat adhoori hi sahi, par dosti toh poori ho sakti thi lekin tune oo bhi bigaada !!"Agar itna ignore karna tha, toh shuruwaat hi kyun ki thi?"Happiest Birthday Sohel!!        </div>
+        <div class="page hidden" id="page5">
+            May be this is the last time I am writing to you... Bas itna kehna tha ki dosti pyaar se badhkar hoti hai...<br>
+            Anyways Happy Birthday. Be happy with the love of your life...
+        </div>
+    </div>
+
+    <button class="btn" id="prev" onclick="prevPage()">Previous</button>
+    <button class="btn" id="next" onclick="nextPage()">Next</button>
+
+    <script>
+        let currentPage = 1;
+        const totalPages = 5;
+
+        function showPage(pageNumber) {
+            for (let i = 1; i <= totalPages; i++) {
+                const page = document.getElementById(`page${i}`);
+                if (i === pageNumber) {
+                    page.classList.remove("hidden");
+                } else {
+                    page.classList.add("hidden");
+                }
+            }
+        }
+
+        function nextPage() {
+            if (currentPage < totalPages) {
+                currentPage++;
+                showPage(currentPage);
+            }
+        }
+
+        function prevPage() {
+            if (currentPage > 1) {
+                currentPage--;
+                showPage(currentPage);
+            }
+        }
+
+        showPage(currentPage);
+    </script>
+</body>
+</html>

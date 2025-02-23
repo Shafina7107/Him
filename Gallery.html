@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your  Gallery</title>
+    <style>
+        
+        * { 
+    margin: 0; padding: 0; box-sizing: border-box; 
+    font-family: 'Poppins', sans-serif; 
+}
+body {
+    background: linear-gradient(135deg, #ff758c, #ff7eb3, #feb47b, #ffdde1);
+
+    overflow: hidden;
+    position: relative;
+}
+
+/* Animated Background Glow */
+body::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(173, 216, 230, 0.1) 10%, transparent 70%);
+    animation: animateBg 10s infinite alternate;
+    pointer-events: none;
+}
+
+/* Smooth Background Animation */
+@keyframes animateBg {
+    from { filter: hue-rotate(0deg); }
+    to { filter: hue-rotate(360deg); }
+}
+
+/* Centering Album */
+.album-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+    position: relative;
+}
+
+/* Rotating Album */
+.gallery {
+    width: 70vw;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotateAlbum 20s linear infinite;
+}
+
+/* Image Style - Balanced Size */
+.gallery img {
+    width: 220px; 
+    height: 220px; 
+    object-fit: cover;
+    border-radius: 25px;
+    position: absolute;
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Positioning Images - Fixed Left & Right Spacing */
+.gallery img:nth-child(1) { transform: rotateY(0deg) translateZ(450px);}
+.gallery img:nth-child(2) { transform: rotateY(45deg) translateZ(400px); }
+.gallery img:nth-child(3) { transform: rotateY(90deg) translateZ(400px); }
+.gallery img:nth-child(4) { transform: rotateY(135deg) translateZ(400px); }
+.gallery img:nth-child(5) { transform: rotateY(180deg) translateZ(400px); }
+.gallery img:nth-child(6) { transform: rotateY(225deg) translateZ(400px); }
+.gallery img:nth-child(7) { transform: rotateY(270deg) translateZ(400px); }
+.gallery img:nth-child(8) { transform: rotateY(315deg) translateZ(400px); }
+.gallery img:nth-child(9) { transform: rotateY(315deg) translateZ(400px); }
+.gallery img:nth-child(10) { transform: rotateY(405deg) translateZ(400px); }
+.gallery img:nth-child(11) { transform: rotateY(450deg) translateZ(400px); }
+.gallery img:nth-child(12) { transform: rotateY(450deg) translateZ(400px); }
+.gallery img:nth-child(13) { transform: rotateY(450deg) translateZ(400px); }
+
+
+/* Hover Effect - Smooth & Aesthetic */
+.gallery img:hover {
+    transform: scale(1.1) rotateY(0deg) translateZ(500px);
+    box-shadow: 0 15px 30px rgba(255, 255, 255, 0.7);
+    border: 3px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Rotating Animation */
+@keyframes rotateAlbum {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(360deg); }
+}
+
+
+
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; color: white; font-size: 2.5em; margin-top: 20px;">
+        Ek Ajeeb sa Insaan, Jo Dost kam, Pariwaar zyada hai! 🎂❤️
+    </h1>
+    
+    <div class="album-container">
+        <div class="gallery">
+            <img src="I1.jpg" alt="Memory 1">
+            <img src="I2.jpg" alt="Memory 2">
+            <img src="I3.jpg" alt="Memory 3">
+            <img src="I4.jpg" alt="Memory 4">
+            <img src="I5.jpg" alt="Memory 5">
+            <img src="I6.jpg" alt="Memory 6">
+            <img src="I7.jpg" alt="Memory 7">
+            <img src="I8.jpg" alt="Memory 8">
+            <img src="I9.jpg" alt="Memory 9">
+            <img src="I10.jpg" alt="Memory 10">
+            <img src="I11.jpg" alt="Memory 11">
+            <img src="I12.jpg" alt="Memory 12">
+            <img src="I13.jpg" alt="Memory13">
+        </div>
+    </div>
+    
+    <button class="back-btn" onclick="goBack()">Go Back</button>
+
+    <script>
+        function goBack() {
+            window.location.href = 'album.html';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #b19cd9, #9a7fd1, #8367c7, #6a5acd, #4b0082);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+        }
+        .player {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+        }
+        button {
+            background: white;
+            border: none;
+            padding: 10px 15px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enjoy the Vibes 🎵</h1>
+    <div class="player">
+        <audio id="audio" src="song1.mp3"></audio>
+        <p id="song-title">Now Playing: Song 1</p>
+        <button onclick="prevSong()">⏮ Prev</button>
+        <button onclick="togglePlay()">▶ Play</button>
+        <button onclick="nextSong()">⏭ Next</button>
+    </div>
+    <script>
+        const songs = ["song1.mp3", "song2.mp3", "song3.mp3"]; 
+        let index = 0;
+        const audio = document.getElementById("audio");
+        const title = document.getElementById("song-title");
+        function togglePlay() {
+            if (audio.paused) {
+                audio.play();
+                document.querySelector("button:nth-child(3)").innerText = "⏸ Pause";
+            } else {
+                audio.pause();
+                document.querySelector("button:nth-child(3)").innerText = "▶ Play";
+            }
+        }
+        function nextSong() {
+            index = (index + 1) % songs.length;
+            updateSong();
+        }
+        function prevSong() {
+            index = (index - 1 + songs.length) % songs.length;
+            updateSong();
+        }
+        function updateSong() {
+            audio.src = songs[index];
+            title.innerText = `Now Playing: ${songs[index]}`;
+            audio.play();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memories Hub</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(45deg, #e0c3fc, #8ec5fc);
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #5B2C6F;
+        }
+        .links a {
+            display: inline-block;
+            padding: 12px 20px;
+            margin: 10px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            color: white;
+            background: #7B68EE;
+            border-radius: 10px;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        .links a:hover {
+            background: #5B2C6F;
+            transform: rotate(5deg) scale(1.1);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📜 Memories Hub</h1>
+        <div class="links">
+            <a href="album.html">📸 Photo Album!</a>
+            <a href="index.html">🎉 Birthday Wishes!</a>
+            <a href="Letter.html">💌 A Letter to you!</a>
+        </div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Love Gallery</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@300;400;500&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ffafbd, #ffc3a0, #ffdde1);
+            animation: gradient 15s ease infinite;
+            font-family: 'Quicksand', sans-serif;
+            overflow: hidden;
+            transition: background 0.5s ease;
+        }
+
+        .glass-container {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 40px 60px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 5em;
+            background: linear-gradient(45deg, #ff6b6b, #fc5c7d, #6c5b7b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .btn-container { display: flex; gap: 20px; justify-content: center; margin-top: 20px; }
+
+        .btn {
+            font-size: 1.2em;
+            padding: 15px 40px;
+            background: linear-gradient(45deg, #fc5c7d, #6c5b7b);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .color-btn { background: linear-gradient(45deg, #ff6b6b, #fc5c7d); }
+
+        .btn:hover { transform: scale(1.1); }
+
+        .heart {
+            position: absolute;
+            font-size: 1.5rem;
+            animation: floatHeart linear forwards;
+            opacity: 0.6;
+        }
+
+        @keyframes floatHeart {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            20% { opacity: 0.6; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="glass-container">
+        <h1>For the one who turns every moment into a memory! 💜</h1>
+        <p class="subtitle">Every moment with you is a treasure worth keeping...</p>
+        <div class="btn-container">
+            <button class="btn color-btn">Change Colors 🎨</button>
+            <button class="btn" onclick="goToGallery()">Walk Through the Memories ✨</button>
+        </div>
+    </div>
+
+    <script>
+        function goToGallery() {
+            window.location.href = 'gallery.html';
+        }
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '💖';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 5 + 3 + 's';
+            document.body.appendChild(heart);
+            heart.addEventListener('animationend', () => heart.remove());
+        }
+        setInterval(createHeart, 600);
+    </script>
+</body>
+</html>
